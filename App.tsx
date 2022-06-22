@@ -1,18 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
 import * as React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import Header from './components/Header';
-import { Global } from './components/styles';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Home from './components/Home';
+import Next from './components/Next';
+
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   const [count, setCount] = React.useState<string>('');
   return (
-    <View style={Global.container}>
-      <Header />
-      <View style={Global.main}>
-        <Text style={Global.text}>Soup</Text>
-      </View>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Next" component={Next} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
