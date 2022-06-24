@@ -25,4 +25,13 @@ export const Global = StyleSheet.create({
     fontSize: 30,
     fontFamily: 'sans-serif-condensed',
   },
+  buttonItem: {
+    backgroundColor: 'pink',
+    fontSize: 16,
+    width: 80,
+    height: 50,
+    alignItems: 'center',
+    justifyContent: 'center',
+    margin: 6,
+  },
 });

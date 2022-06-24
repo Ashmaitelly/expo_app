@@ -1,10 +1,15 @@
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { createStackNavigator } from '@react-navigation/stack';
 import Home from './components/Home';
 import Next from './components/Next';
 
-const Stack = createNativeStackNavigator();
+type RootStackParamList = {
+  Home: undefined;
+  Next: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   const [count, setCount] = React.useState<string>('');
